@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onyedikachi Aniuchi – Informatics Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;color:#1a202c;background:#ffffff;line-height:1.7}
+img{max-width:100%}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{list-style:none}
+
+/* ── NAV ──────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#111827;border-bottom:1px solid #1f2937}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:58px}
+.nav-brand{color:#f9fafb;font-size:.9rem;font-weight:600;letter-spacing:-.01em}
+.nav-links{display:flex;gap:1.75rem;align-items:center}
+.nav-links a{color:#9ca3af;font-size:.825rem;font-weight:500;transition:color .15s}
+.nav-links a:hover{color:#f9fafb;text-decoration:none}
+.nav-cta{background:#2563eb;color:#fff!important;padding:7px 16px;border-radius:6px;font-size:.8rem!important;font-weight:600!important;transition:background .15s!important;white-space:nowrap}
+.nav-cta:hover{background:#1d4ed8!important;text-decoration:none!important}
+
+/* ── LAYOUT ───────────────────────────────── */
+.container{max-width:1120px;margin:0 auto;padding:0 2rem}
+section{padding:88px 0}
+section:nth-of-type(even){background:#f8fafc}
+
+/* ── SECTION HEADING ──────────────────────── */
+.sh{margin-bottom:52px}
+.sh h2{font-size:1.75rem;font-weight:700;color:#111827;margin-bottom:10px}
+.sh-bar{width:44px;height:3px;background:#2563eb;border-radius:2px;margin-bottom:14px}
+.sh p{color:#6b7280;font-size:.95rem;max-width:600px;line-height:1.65}
+
+/* ── ABOUT ────────────────────────────────── */
+#about{padding-top:146px;padding-bottom:88px}
+.about-wrap{max-width:820px}
+.about-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2563eb;margin-bottom:14px}
+.about-name{font-size:2.8rem;font-weight:700;color:#111827;line-height:1.15;margin-bottom:10px}
+.about-sub{font-size:1.05rem;color:#4b5563;font-weight:400;margin-bottom:32px;line-height:1.5}
+.about-bio p{color:#374151;font-size:.97rem;line-height:1.75;margin-bottom:16px}
+.goal-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.goal-tag{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;padding:7px 16px;border-radius:20px;font-size:.8rem;font-weight:600}
+
+/* ── PROJECTS ─────────────────────────────── */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:24px}
+.proj-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:28px 26px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .2s,transform .2s}
+.proj-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08);transform:translateY(-3px)}
+.proj-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b7280}
+.proj-title{font-size:1.05rem;font-weight:700;color:#111827;line-height:1.3}
+.proj-role{font-size:.82rem;color:#2563eb;font-weight:600}
+.proj-desc{font-size:.88rem;color:#374151;line-height:1.7;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.ptag{background:#eff6ff;color:#1e40af;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:10px}
+
+/* ── SKILLS ───────────────────────────────── */
+#skills{background:#f8fafc}
+.skills-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.skill-group h3{font-size:1rem;font-weight:700;color:#111827;margin-bottom:20px;padding-bottom:10px;border-bottom:1.5px solid #e5e7eb}
+.skill-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px}
+.sdot{width:6px;height:6px;border-radius:50%;background:#2563eb;flex-shrink:0;margin-top:6px}
+.sname{font-size:.9rem;font-weight:600;color:#1f2937}
+.ssub{font-size:.77rem;color:#6b7280;margin-top:2px;line-height:1.45}
+
+/* ── CONTACT ──────────────────────────────── */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:4px}
+.contact-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:22px 20px}
+.ctype{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:8px}
+.contact-card a,.contact-card span{font-size:.875rem;color:#1f2937;word-break:break-word}
+.contact-card a{color:#2563eb}
+.contact-card a:hover{text-decoration:underline}
+
+/* ── FOOTER ───────────────────────────────── */
+footer{background:#111827;color:#6b7280;text-align:center;padding:28px 2rem;font-size:.8rem;line-height:1.6}
+
+/* ── RESPONSIVE ───────────────────────────── */
+@media(max-width:760px){
+  .about-name{font-size:2rem}
+  .skills-cols{grid-template-columns:1fr;gap:28px}
+  .nav-links li:nth-child(-n+4){display:none}
+  section{padding:64px 0}
+  #about{padding-top:120px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <span class="nav-brand">Onyedikachi Aniuchi</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="Onyedikachi_Aniuchi_Resume.docx" download class="nav-cta">&#8595; Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ ABOUT ══════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-eyebrow">Informatics Portfolio &nbsp;·&nbsp; Northeastern University</div>
+      <h1 class="about-name">Onyedikachi Aniuchi</h1>
+      <p class="about-sub">MPS in Informatics, Information Security Management &nbsp;·&nbsp; Toronto, ON</p>
+      <div class="about-bio">
+        <p>I am a Master of Professional Studies candidate in Informatics at Northeastern University, concentrating in Information Security Management. My path into IT began with a lifelong engagement with digital technologies — formalized first through a Bachelor of Technology in Information Technology, and deepened through graduate study designed to close the gap between technical proficiency and strategic leadership.</p>
+        <p>Graduate coursework and applied projects transformed how I approach security: from a practitioner focused on technical mechanics to a governance-literate professional who thinks systemically about risk, policy, and organizational resilience. I now apply NIST, ISO/IEC 27001, HIPAA, PIPEDA, and a range of Canadian provincial regulations to real, high-stakes project contexts — with the analytical depth to assess risk at the executive level and the framework fluency to navigate multi-jurisdictional compliance environments.</p>
+        <p>My immediate priority is establishing myself in cybersecurity GRC, with a medium-term goal of IT security consulting — advising organizations on the design and operationalization of security governance programs. IT project and program management serves as the structural backbone across all my work, ensuring that strategic intent reliably translates into operational delivery.</p>
+        <p>Target certifications: CompTIA Security+ &nbsp;·&nbsp; CISA &nbsp;·&nbsp; CRISC &nbsp;·&nbsp; CISM &nbsp;·&nbsp; CISSP</p>
+      </div>
+      <div class="goal-tags">
+        <span class="goal-tag">Information Security Analyst</span>
+        <span class="goal-tag">IT Project / Program Manager</span>
+        <span class="goal-tag">IT (Cybersecurity) Consultant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ════════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-bar"></div>
+      <h2>Projects</h2>
+      <p>A curated selection of graduate projects demonstrating applied work in information security, cloud architecture, risk management, and full-stack development — each targeting real organizational contexts.</p>
+    </div>
+    <div class="proj-grid">
+
+      <!-- P1 -->
+      <article class="proj-card">
+        <div>
+          <div class="proj-eyebrow">Project 01 &nbsp;·&nbsp; Capstone &nbsp;·&nbsp; Sep 2025 – Mar 2026</div>
+          <div class="proj-title">Executive Health Outcomes Dashboard</div>
+          <div class="proj-role">Team Lead &rarr; Frontend Developer</div>
+        </div>
+        <p class="proj-desc">Designed and built a HIPAA/PHIPA-compliant executive decision-support dashboard aggregating employee health data from a Software as a Medical Device (SaMD) platform across a cloud-native GCP backend. Led a four-member team as Team Lead, then assumed the Frontend Developer role mid-project to deliver the full React/TypeScript interface — complete with JWT authentication, AES-256 encryption at rest, TLS 1.2+ in transit, and a containerized CI/CD deployment. Scored 82.5 on the System Usability Scale and passed a 68-test compliance suite, earning instructor and sponsor commendation for technical rigor.</p>
+        <div class="proj-tags">
+          <span class="ptag">React / TypeScript</span>
+          <span class="ptag">GCP Cloud Run</span>
+          <span class="ptag">HIPAA / PHIPA</span>
+          <span class="ptag">JWT / AES-256 / TLS</span>
+          <span class="ptag">GitHub Actions CI/CD</span>
+          <span class="ptag">Usability Testing</span>
+          <span class="ptag">Agile / PMBOK</span>
+        </div>
+      </article>
+
+      <!-- P2 -->
+      <article class="proj-card">
+        <div>
+          <div class="proj-eyebrow">Project 02 &nbsp;·&nbsp; Experiential Learning &nbsp;·&nbsp; Apr – Jun 2025</div>
+          <div class="proj-title">Human Feedback Data Library</div>
+          <div class="proj-role">Team Lead &amp; Technical Lead</div>
+        </div>
+        <p class="proj-desc">Built a full-stack open-access platform consolidating 100+ human feedback AI datasets scattered across Hugging Face, GitHub, and arXiv into a single searchable catalog. Designed a Google Sheets API curation pipeline normalizing 12 metadata fields — including ethical risk indicators and open-source license classifications — to ensure compliant reuse for AI researchers. Led A/B usability testing (grid vs. list view) to drive interface decisions, and resolved data quality through automated duplicate detection and link verification.</p>
+        <div class="proj-tags">
+          <span class="ptag">React.js / Node.js</span>
+          <span class="ptag">Google Sheets API</span>
+          <span class="ptag">Data Governance</span>
+          <span class="ptag">A/B Usability Testing</span>
+          <span class="ptag">Ethical AI</span>
+          <span class="ptag">License Compliance</span>
+        </div>
+      </article>
+
+      <!-- P3 -->
+      <article class="proj-card">
+        <div>
+          <div class="proj-eyebrow">Project 03 &nbsp;·&nbsp; Network &amp; Cloud Security &nbsp;·&nbsp; Sep – Oct 2025</div>
+          <div class="proj-title">K-12 LMS Cybersecurity Plan</div>
+          <div class="proj-role">Team Lead &amp; Cybersecurity Analyst</div>
+        </div>
+        <p class="proj-desc">Led a cross-functional team to architect a comprehensive cybersecurity strategy for a K-12 learning management platform serving 300,000 students across 3,000 schools in eight Canadian provinces. Mapped all controls to NIST CSF v1.1 and the AWS Well-Architected Security Pillar, achieving full alignment with PIPEDA, BC FIPPA, ON MFIPPA, and QC Law 25. Governed the design of a 3,000-account multi-tenant AWS architecture enforcing zero cross-tenant breaches, achieved SOC 2 Type II alignment, and validated incident response targets: MTTD 3.2h and MTTR 6.8h — well within Canada's 72-hour federal breach notification threshold.</p>
+        <div class="proj-tags">
+          <span class="ptag">NIST CSF v1.1</span>
+          <span class="ptag">AWS Multi-Tenant</span>
+          <span class="ptag">PIPEDA / FIPPA / QC Law 25</span>
+          <span class="ptag">SOC 2 Type II</span>
+          <span class="ptag">Incident Response</span>
+          <span class="ptag">GuardDuty / Security Hub</span>
+        </div>
+      </article>
+
+      <!-- P4 -->
+      <article class="proj-card">
+        <div>
+          <div class="proj-eyebrow">Project 04 &nbsp;·&nbsp; Security Analytics &nbsp;·&nbsp; Dec 2025</div>
+          <div class="proj-title">Enterprise Phishing Defense Program</div>
+          <div class="proj-role">Cybersecurity Researcher &amp; Analyst</div>
+        </div>
+        <p class="proj-desc">Developed a 5-stage NIST CSF 2.0-aligned phishing defense program for a multi-location retail organization facing a 202% surge in regional phishing activity. Designed a layered technical architecture spanning AI-powered email filtering, hardware MFA, DMARC/DKIM/SPF protocols, SIEM log correlation, and User Behavior Analytics for anomaly detection. Built a board-level business case targeting prevention of $4.88M in average breach costs, and authored a 90-day implementation roadmap with defined governance structures, measurable effectiveness metrics, and third-party supply chain risk controls.</p>
+        <div class="proj-tags">
+          <span class="ptag">NIST CSF 2.0</span>
+          <span class="ptag">SIEM / UBA</span>
+          <span class="ptag">DMARC / DKIM / SPF</span>
+          <span class="ptag">Incident Response</span>
+          <span class="ptag">Business Case Design</span>
+          <span class="ptag">Human Risk Management</span>
+        </div>
+      </article>
+
+      <!-- P5 -->
+      <article class="proj-card">
+        <div>
+          <div class="proj-eyebrow">Project 05 &nbsp;·&nbsp; Risk Management &nbsp;·&nbsp; May – Jun 2025</div>
+          <div class="proj-title">Healthcare Organization Risk Assessment</div>
+          <div class="proj-role">Information Security Risk Analyst</div>
+        </div>
+        <p class="proj-desc">Conducted a comprehensive qualitative risk assessment for a healthcare organization's critical infrastructure — including UNIX servers, Active Directory, offshore developer connections, QA environments, and proprietary source code repositories. Identified critical PHI/PII/SSN exposures and engineered mitigations including VLAN/firewall segmentation, phishing-resistant MFA, VPN-only offshore access, and QA data masking. Partnered with SMEs to re-qualify contested findings, then authored Executive Summaries and Risk Evaluation Worksheets with a 30–180 day cross-departmental remediation roadmap.</p>
+        <div class="proj-tags">
+          <span class="ptag">NIST CSF 2.0 / RMF</span>
+          <span class="ptag">PHI / PII Compliance</span>
+          <span class="ptag">Qualitative Risk Assessment</span>
+          <span class="ptag">VLAN Segmentation</span>
+          <span class="ptag">Executive Reporting</span>
+          <span class="ptag">SME Collaboration</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══════════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-bar"></div>
+      <h2>Skills</h2>
+      <p>Technical and professional competencies developed across graduate coursework, capstone delivery, and applied project leadership.</p>
+    </div>
+    <div class="skills-cols">
+
+      <!-- TECHNICAL -->
+      <div class="skill-group">
+        <h3>Technical Skills</h3>
+
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Security Risk Assessment &amp; Management</div><div class="ssub">Qualitative frameworks, threat modeling, asset classification, PHI/PII exposure analysis, remediation planning</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">GRC Framework Implementation</div><div class="ssub">NIST CSF 2.0 / RMF, ISO/IEC 27001, PCI-DSS, SOC 2 Type II, CIS Critical Controls</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Multi-Jurisdictional Compliance</div><div class="ssub">HIPAA, PHIPA, PIPEDA, GDPR, BC FIPPA, ON MFIPPA, QC Law 25</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Cloud Security Architecture</div><div class="ssub">AWS (GuardDuty, Security Hub, Config, VPC, SCPs) &nbsp;·&nbsp; GCP (Cloud Run, Cloud SQL, IAM)</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Incident Response Planning</div><div class="ssub">Playbook development, MTTD/MTTR targets, containment, forensic review, recovery protocols</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">SIEM &amp; Security Analytics</div><div class="ssub">Microsoft Sentinel, Azure Monitor, KQL query engineering, log correlation, threat detection</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Full-Stack Development</div><div class="ssub">React.js, TypeScript, Node.js, Python, SQL, REST APIs, Docker, GitHub Actions CI/CD</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">IT Project Management</div><div class="ssub">PMBOK, Agile/Scrum, WBS, risk registers, milestone tracking, stakeholder reporting</div></div>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL -->
+      <div class="skill-group">
+        <h3>Professional Skills</h3>
+
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Project &amp; Team Leadership</div><div class="ssub">End-to-end delivery ownership, cross-functional coordination, dual-role flexibility under constraint</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Executive Stakeholder Communication</div><div class="ssub">Translating technical risk into business-level decision support and executive reporting</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Technical Documentation &amp; Reporting</div><div class="ssub">Risk worksheets, executive summaries, architecture docs, academic and professional writing</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Strategic Roadmapping</div><div class="ssub">Phased implementation planning, governance structure design, ownership and accountability mapping</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Risk-Based Decision Making</div><div class="ssub">Evidence-informed prioritization, contested finding adjudication, SME collaboration</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Governance &amp; Policy Development</div><div class="ssub">Security policy drafting, control mapping, compliance program design</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Change Management</div><div class="ssub">Scope control, stakeholder alignment, role transition management, transition planning</div></div>
+        </div>
+        <div class="skill-row">
+          <div class="sdot"></div>
+          <div><div class="sname">Analytical Problem Solving</div><div class="ssub">Regulatory analysis, systems thinking, compliance-first design, evidence-driven UX</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-bar"></div>
+      <h2>Contact</h2>
+      <p>Open to opportunities in Information Security Analysis, IT Project/Program Management, and IT (Cybersecurity) Consulting in the Toronto and Canadian market.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="ctype">Email</div>
+        <a href="mailto:onyedikachi.aniuchi.career@gmail.com">onyedikachi.aniuchi.career@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="ctype">LinkedIn</div>
+        <a href="https://www.linkedin.com/in/onyedikachi-aniuchi" target="_blank" rel="noopener">linkedin.com/in/onyedikachi-aniuchi</a>
+      </div>
+      <div class="contact-card">
+        <div class="ctype">GitHub</div>
+        <a href="https://github.com/aniuchi-o" target="_blank" rel="noopener">github.com/aniuchi-o</a>
+      </div>
+      <div class="contact-card">
+        <div class="ctype">Location</div>
+        <span>Toronto, ON, Canada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Onyedikachi Aniuchi &nbsp;·&nbsp; MPS in Informatics, Information Security Management &nbsp;·&nbsp; Northeastern University &nbsp;·&nbsp; 2026</p>
+</footer>
+
+<script>
+  // Highlight active nav link on scroll
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a[href^="#"]');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => {
+          l.style.color = l.getAttribute('href') === '#' + e.target.id ? '#f9fafb' : '#9ca3af';
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+  secs.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
